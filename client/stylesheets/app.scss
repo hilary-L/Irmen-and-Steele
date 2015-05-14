@@ -638,13 +638,22 @@ $md-green: #2C3F2F;
 
 // Global Settings //
 
+iframe[name="google_conversion_frame"] {
+	display: none;
+}
+
+
 body {
-	background: url(/images/Table-Background-small.png);
+	background: url(/images/Table-Background-small.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
 	@media (min-width: 1900px) {
-		background: url(/images/Table-Background-large.png);
+		background: url(/images/Table-Background-large.jpg);
 	}
+}
+
+g {
+	stroke: #F3DFC1;
 }
 
 .contain {
@@ -671,14 +680,14 @@ body {
 	height: 100%;
 
 	&.dim {
-		background: url(/images/Table-Background-small.png);
+		background: url(/images/Table-Background-small.jpg);
 		background-size: cover;
 		background-repeat: no-repeat;
 		@media (min-width: 1900px) {
-			background: url(/images/Table-Background-large.png);
+			background: url(/images/Table-Background-large.jpg);
 		}
 		filter: blur(4px);
-		transition: filter 550ms cubic-bezier(0.165, 0.840, 0.440, 1.000);
+		transition: filter 350ms cubic-bezier(0.165, 0.840, 0.440, 1.000);
 	}
 }
 
@@ -688,11 +697,11 @@ body {
 	height: 100%;
 	&.brown {
 		background-color: rgba(35, 27, 17, 0.8);
-		transition: all 450ms cubic-bezier(0.165, 0.840, 0.440, 1.000) 200ms;
+		transition: all 250ms cubic-bezier(0.165, 0.840, 0.440, 1.000) 100ms;
 	}
 	&.green {
 		background-color: rgba(21, 32, 22, 0.85);
-		transition: all 450ms cubic-bezier(0.165, 0.840, 0.440, 1.000) 200ms;
+		transition: all 250ms cubic-bezier(0.165, 0.840, 0.440, 1.000) 100ms;
 	}
 }
 
@@ -748,8 +757,54 @@ body {
 		
 	}
 
+	&.expanded {
+
+		.title-area, .right {
+
+				background: transparent;
+
+				&.brown {
+					background-color: rgba(35, 27, 17, 0.8);
+					transition: all 250ms cubic-bezier(0.165, 0.840, 0.440, 1.000) 100ms;
+				}
+				&.green {
+					background-color: rgba(21, 32, 22, 0.85);
+					transition: all 250ms cubic-bezier(0.165, 0.840, 0.440, 1.000) 100ms;
+				}
+			}
+
+	}
+
 	.top-bar-section {
 
+		&.expanded {
+			height: 400px;
+
+			.right {
+				width: 100%;
+				left: 0;
+				padding-top: 2%;
+
+				li {
+
+					a {
+						padding-left: 2%! important;
+
+						&:hover {
+							border-bottom: none;
+						}
+					}
+				}
+			}
+
+
+
+			.active-lt {
+				border-bottom: none;
+				border-left: 3px double $cream;
+
+			}
+		}
 
 
 		ul > li  {
@@ -806,6 +861,42 @@ body {
 			margin-top: 0.5%;
 
 		}
+
+
+	}
+
+	@media(max-width: 640px) {
+
+			.active {
+				border-bottom: none;
+			}
+
+			.name {
+				margin-left: 5%;
+
+			}
+
+			.toggle-topbar.menu-icon a {
+
+				font-family: "Proxima Nova";
+				font-size: 1.5rem;
+				color: $lt-brown;
+				margin-right: 5%;
+
+				& span::after {
+					box-shadow: 0px 0px 0px 1px $lt-brown, 0px 7px 0px 1px $lt-brown, 0px 14px 0px 1px $lt-brown;
+				}
+
+				&.dimmed {
+					color: $cream;
+
+					& span::after {
+					box-shadow: 0px 0px 0px 1px $cream, 0px 7px 0px 1px $cream, 0px 14px 0px 1px $cream;
+					}
+				}
+
+			
+			}
 	}
 }
 
@@ -822,6 +913,15 @@ h1.site-title {
 	span {
 
 		font-family: "Ostrich Sans Inline";
+		padding-left: 0.5rem;
+	}
+
+	@media(max-width: 640px) {
+		font-size: 4.5rem;
+	}
+
+	@media(min-height: 500px) and (max-width: 640px) {
+		margin-top: 30%;
 	}
 }
 
@@ -829,9 +929,13 @@ h2.site-title {
 	text-align: center;
 	margin-top: -7%;
 	font-family: 'Sanchez', serif;
-	font-size: 1.6rem;
+	font-size: 1.62rem;
 	color: $lt-brown-2;
 	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+
+	@media(max-width: 640px) {
+		font-size: 1.05rem;
+	}
 }
 
 
@@ -849,10 +953,9 @@ h2.site-title {
 	h2 {
 		color: $cream;
 		text-align: center;
-		font-family: 'Sanchez', serif;
+		font-family: 'Proxima Nova', sans-serif;
 		padding: 0;
-		font-variant: small-caps;
-		font-size: 1.2rem;
+		font-size: 1.4rem;
 	}
 
 	p {
@@ -860,7 +963,6 @@ h2.site-title {
 		text-align: center;
 		font-family: 'Sanchez', serif;
 		font-size: 0.9rem;
-		border-bottom: 3px double $cream;
 		padding-bottom: 1rem;
 	}
 	&.center-panel {
@@ -896,7 +998,7 @@ h2.site-title {
 
 .ui-state-default, .ui-accordion .ui-accordion-content {
 	background: transparent;
-	border: 1px double $cream;
+	border: 1px solid $cream;
 	padding: 1em;
 	
 }
@@ -906,6 +1008,7 @@ h2.site-title {
 	color: $cream;
 	font-family: "Proxima Nova";
 	font-size: 1.4rem;
+	padding-right: 2.5rem;
 }
 
 #accordion img {
@@ -921,6 +1024,27 @@ img.featured {
 	position: absolute;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.unit {
+	border: 1px solid $cream;
+	border-radius: 4px;
+	padding-left: 0.25rem;
+	padding-right: 0.25rem;
+	margin-bottom: 0.25rem;
+
+	p {
+		margin-bottom: 0;
+	}
+}
+
+// Furniture Mobile Template //
+
+.furniture-mobile {
+	
+	.small-12 {
+		margin: 0;
+	}
 }
 
 // Activity Template //
@@ -946,6 +1070,7 @@ img.featured {
 			background-color: rgba(59, 59, 59, 0.5);
 			border-left: 3px double $cream;
 			border-right: 3px double $cream;
+			border-bottom: 3px double $cream;
 			box-shadow: 3px 3px 5px 0px $dk-green;
 
 			span {
@@ -984,6 +1109,7 @@ img.featured {
 
 				img {
 					margin-bottom: 3%;
+					border-radius: 4px;
 				}
 
 				p {
@@ -996,6 +1122,22 @@ img.featured {
 			
 		}
 	}
+
+	.mobile-desc {
+		display: none;
+	}
+
+	@media(max-width: 640px) {
+
+		.large-3 {
+			display: none;
+		}
+
+		.mobile-desc {
+			display: block;
+			margin: 1rem 0.5rem;
+		}
+	}
 	
 }
 
@@ -1005,52 +1147,705 @@ img.featured {
 
 	.md-panel {
 
-		&.medium-4 {
-			margin-left: 0;
-			width: 36%;
-			position: relative;
+		&.medium-10 {
 
-
-			.first-image {
-				width: 70%;
-				margin-left: 15%;
-				margin-top: 10%;
+			.ui-widget-content, .ui-tabs-nav {
+				background: none;
 			}
-
-			p {
-				font-family: 'Sanchez', serif;
-				font-variant: none;
-				margin-top: 5%;
-				border: none;
-				
-			}
-		}
-		&.medium-7 {
-			width: 62%;
 
 			#tabs {
 				background-color: transparent;
+				border: none;
+				margin-top: 0.5rem;
 
 				.ui-tabs-nav {
 					background-color: transparent;
 
-					.ui-state-default {
-						background-color: transparent;
-					}
+					
 				}
+
+			}
+
+			.ui-tabs {
 
 				.ui-tabs-panel {
 					background-color: transparent;
+					border-right: 1px solid $cream;
+					border-bottom: 1px solid $cream;
+					border-left: 1px solid $cream;
+					border-bottom-left-radius: 4px;
+					border-bottom-right-radius: 4px;
+					
+					p {
+						text-align: left;
+						font-size: 1rem;
+						padding-right: 0.5rem;
+						padding-left: 0.5rem;
+						margin-bottom: 0.5rem;
+					}
 				}
 
+				.ui-tabs-nav {
+					border: none;
+					padding-left: 0;
+					padding-right: 0;
+
+					.ui-state-default {
+						border: 1px solid $cream;
+						width: 20%;
+						margin: 0;
+						background-image: none;
+						background-color: rgba(14, 30, 22, 0.7);
+
+
+						&.ui-tabs-active {
+							border-bottom: none;
+							background-color: transparent;
+
+							a {
+								text-decoration: underline;
+							}
+						}
+
+						a {
+							color: $cream;
+							font-family: "Proxima Nova";
+							font-size: 1.3rem;
+							padding: 0.5rem 1.5rem;
+						}
+					}
+				}
+			}
+
+			img {
+				border-radius: 4px;
+			}
+		
+			#fragment-1 {
+				.first-image {
+					float: left;
+					height: 250px;
+					margin-right: 1rem;
+				}
+
+				.second-image {
+					float: right;
+					height: 250px;
+					margin-left: 1rem;
+				}
+
+				a {
+					color: $cream;
+					text-decoration: underline;
+					&:hover {
+						color: $lt-brown;
+					}
+				}
+			}
+
+			#fragment-2 {
+
+				.first-image {
+					float: right;
+					height: 300px;
+					margin-left: 1rem;
+				}
+
+				.second-image {
+					float: left;
+					height: 175px;
+					margin-right: 1rem;
+				}
+
+			}
+
+			#fragment-3 {
+				.first-image {
+					float: left;
+					height: 250px;
+					margin-right: 1rem;
+				}
+
+				.second-image {
+					float: right;
+					height: 225px;
+					margin-left: 1rem;
+				}
+
+				a {
+					color: $cream;
+					text-decoration: underline;
+					&:hover {
+						color: $lt-brown;
+					}
+				}
+			}
+
+			#fragment-4 {
+				.first-image {
+					float: right;
+					height: 250px;
+					margin-left: 1rem;
+					border: 1px solid $cream;
+				}
+
+				.second-image {
+					float: left;
+					height: 210px;
+					margin-right: 1rem;
+
+				}
+				a {
+					color: $cream;
+					text-decoration: underline;
+					&:hover {
+						color: $lt-brown;
+					}
+				}
+
+			}
+
+			#fragment-5 {
+				.first-image {
+					float: right;
+					height: 250px;
+					margin-left: 1rem;
+				}
+
+				a {
+					color: $cream;
+					text-decoration: underline;
+					&:hover {
+						color: $lt-brown;
+					}
+				}
+			}
+
+		
+
+	
+		}
+	}
+}
+
+// Designs Template //
+
+.designs {
+
+	svg {
+		display: block;
+		max-height: 400px;
+		margin-top: 10%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.ui-menu {
+
+		background: transparent;
+		border: 1px solid $cream;
+		border-radius: 4px;
+		padding: 0.2rem;
+
+		.ui-menu-item {
+			font-family: "Sanchez";
+			color: $cream;
+			padding-top: 1rem;
+			padding-bottom: 1rem;
+			border-bottom: 1px solid $cream;
+			border-top: 1px solid $cream;
+			padding-left: 1rem;
+
+			&:hover, &:focus {
+				border-left: none;
+				border-right: none;
+				border-top: 1px solid $cream;
+				border-bottom: 1px solid $cream;
+
+			}
+
+			
+		}
+
+		.ui-state-focus, .ui-widget-content .ui-state-focus {
+			background: $md-brown;
+			border-color: $cream;
+		}
+
+		li:first-child, li:first-child:hover {
+			border-top: none;
+		}
+
+		li:last-child, li:last-child:hover {
+			border-bottom: none;
+		}
+
+	}
+
+	p {
+		margin-top: 1rem;
+	}
+
+	a {
+		color: $cream;
+		text-decoration: underline;
+
+		&:hover {
+			color: $lt-brown;
+		}
+	}
+
+
+
+}
+
+// Contact Template //
+
+.contact {
+
+	.contact-form {
+
+		.success-text {
+			margin-bottom: 0;
+			padding: 0;
+		}
+
+		border: 1px solid $cream;
+		border-radius: 4px;
+		margin-top: 0.5rem;
+
+		.grid-form-header {
+			margin-left: 0.1rem;
+			background-color: transparent;
+			text-align: center;
+			color: $cream;
+			font-family: "Sanchez";
+			margin-top: 0.5rem;
+			border-color: $cream;
+			border-bottom: 1px solid;
+			
+		}
+
+		.grid-form-row {
+
+			border-color: $cream;
+
+			.no-hover {
+
+				border-bottom: none;
+
+				.success-text {
+					margin-bottom: 0;
+				}
+
+				&:hover {
+					background: transparent! important;
+				}
+
+				input[type="submit"] {
+					display: block;
+					margin: 0.5rem auto;
+					background-color: transparent;
+					color: $cream;
+					border: 1px solid $cream;
+					border-radius: 4px;
+					padding: 0.5rem 1rem;
+				}
+			}
+		}
+
+		.grid-form-element {
+
+			border-color: $cream;
+			
+			label {
+				color: $cream! important;
+				font-family: "Sanchez";
+
+				span {
+					color: $cream;
+				}
+
+
+			}
+
+			input, textarea {
+				color: $cream;
+
+				&:focus {
+					color: $lt-brown;
+					background: #FFFDED;
+				}
+			}
+
+			&:hover, &:focus {
+
+				input {
+					color: $lt-brown;
+				}
+
+				label {
+					color: $lt-brown! important;
+				}
+
+				span {
+					color: $lt-brown;
+				}
+			}
+
+
+		}
+	}
+}
+
+// Shop Template //
+
+.shop {
+
+	.medium-4 {
+		border: 1px solid $cream;
+		border-radius: 4px;
+		background-color: rgba(21, 32, 22, 0.75);
+		margin-left: 1.5%;
+		margin-right: 1.5%;
+		width: 30%;
+		margin-bottom: 2rem;
+		padding-top: 2rem;
+		margin-top: 3rem;
+		box-shadow: 1px 1px 5px 0px #000000;
+
+
+
+		&.medium-offset-2 {
+			margin-left: 19.75%! important;
+		}
+
+
+	}
+
+	@media(max-width: 640px) {
+
+			.medium-4 {
+
+				width: 100%;
+
+				&.medium-offset-2 {
+					margin-left: 0rem! important;
+				}
+
+				margin: 1rem 0.5rem 1rem 0rem;
+			}
+
+			
+		}
+
+	h3 {
+		text-align: center;
+		color: $cream;
+		font-family: "Proxima Nova";
+		border-bottom: 1px solid $cream;
+		margin-bottom: 2rem;
+	}
+
+	.cm-logo {
+		width: 100px;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 2rem;
+	}
+
+	.cm-logo-text {
+		width: 200px;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 1rem;
+	}
+
+	.etsy-logo {
+		width: 225px;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 2.8rem;
+	}
+
+}
+
+// Mobile Templates //
+
+// Furniture Mobile //
+
+.furniture-mobile {
+
+	.md-panel {
+
+		padding: 0;
+
+		@media(min-height: 500px) {
+			min-height: 600px;
+		}
+
+		.row {
+			padding: 0.5rem;
+		}
+		
+	}
+
+	#furniture-menu-button {
+		display: block;
+		margin: 0 auto;
+		min-width: 99%;
+		color: $cream;
+		padding: 0;
+		font-family: "Proxima Nova";
+		font-size: 1.5rem;
+
+		span.ui-selectmenu-text {
+			text-align: center;
+		}
+	}
+
+	.ui-selectmenu-menu {
+
+		.ui-widget-content {
+
+			background: rgba(35, 27, 17, 0.9);
+			color: $cream;
+			font-family: "Proxima Nova";
+			text-align: center;
+			font-size: 1.3rem;
+
+			.ui-menu-item.ui-state-focus {
+				background: rgba(35, 27, 17, 0.8);
+				color: $cream;
+			}
+		}
+	}
+
+	.item-box {
+
+		border: 1px solid $cream;
+		padding: 0.75rem;
+		margin: 0.5rem 0;
+		border-radius: 4px;
+
+		h1 {
+			color: $cream;
+			font-family: "Sanchez";
+			font-size: 1.3rem;
+			text-align: center;
+		}
+
+		img {
+			border: 1px solid $cream;
+			border-radius: 4px;
+			display: block;
+			margin: 0 auto 1rem auto;
+		}
+
+		h5 {
+			color: $cream;
+			font-family: "Sanchez";
+			font-size: 1rem;
+			text-align: left;
+			
+
+			span {
+				text-decoration: underline;
+			}
+		}
+
+		p {
+			text-align: left;
+			font-size: 1rem;
+			line-height: 1.4;
+
+			span {
+				text-decoration: underline;
 			}
 		}
 	}
 }
 
-.ui-widget-content, .ui-tabs-nav, .ui-widget-content .ui-state-default, .ui-widget-content .ui-state-active {
-	background: none;
+.about-mobile {
+
+	.md-panel {
+
+		padding: 0;
+
+		@media(min-height: 500px) {
+			min-height: 600px;
+		}
+
+		.row {
+			padding: 0.5rem;
+
+			.row {
+				width: inherit! important;
+				padding: 0;
+			}
+		}
+
+		h1 {
+			color: $cream;
+			font-family: "Proxima Nova";
+			font-size: 1.3rem;
+			text-align: center;
+		}
+
+		img {
+			max-height: 200px;
+			max-width: 175px;
+		}
+
+		p {
+			text-align: left;
+			font-size: 1rem;
+			padding-right: 0.5rem;
+			padding-left: 0.5rem;
+			margin-bottom: 0.5rem;
+		}
+
+		.first-image {
+
+			float: left;
+			margin-right: 0.5rem;
+		}
+
+		.second-image {
+
+			float: right;
+			margin-left: 0.5rem;
+		}
+
+		.about-cat {
+
+			border: 1px solid $cream;
+			border-radius: 4px;
+			display: block;
+			margin: 1rem auto 0 auto;
+
+			&#construction {
+
+				.first-image {
+
+					border: 1px solid $cream;
+					border-radius: 4px;
+				}
+			}
+		}
+
+		a {
+			color: $cream;
+			text-decoration: underline;
+		}
+
+		p {
+			line-height: 1.4;
+		}
+		
+	}
+
+	.row .row {
+
+		width: inherit;
+		padding: 0;
+		margin: 0;
+
+
+	}
+
+	#about-menu-button {
+		display: block;
+		margin: 0 auto;
+		min-width: 99%;
+		color: $cream;
+		padding: 0;
+		font-family: "Proxima Nova";
+		font-size: 1.5rem;
+
+		span.ui-selectmenu-text {
+			text-align: center;
+		}
+	}
+
+	.ui-selectmenu-menu {
+
+		.ui-widget-content {
+
+			background: rgba(14, 30, 22, 0.9);
+			color: $cream;
+			font-family: "Proxima Nova";
+			text-align: center;
+			font-size: 1.3rem;
+
+			.ui-menu-item.ui-state-focus {
+				background: rgba(14, 30, 22, 0.7);
+				color: $cream;
+			}
+		}
+	}
 }
 
+// Mobile Design Template //
 
+.mobile-design {
 
+	.md-panel {
+
+		padding: 0;
+
+		@media(min-height: 500px) {
+			min-height: 600px;
+		}
+	}
+
+	#designs-menu-button {
+		display: block;
+		margin: 0 auto;
+		min-width: 99%;
+		color: $cream;
+		padding: 0;
+		font-family: "Proxima Nova";
+		font-size: 1.5rem;
+
+		span.ui-selectmenu-text {
+			text-align: center;
+		}
+	}
+
+	.ui-selectmenu-menu {
+
+		.ui-widget-content {
+
+			background: rgba(35, 27, 17, 0.9);
+			color: $cream;
+			font-family: "Proxima Nova";
+			text-align: center;
+			font-size: 1.3rem;
+
+			.ui-menu-item.ui-state-focus {
+				background: rgba(35, 27, 17, 0.8);
+				color: $cream;
+			}
+		}
+	}
+
+	#design-pad {
+
+		h2 {
+			margin-bottom: 2rem;
+		}
+
+		svg {
+			margin-bottom: 2rem;
+		}
+	}
+
+	a {
+		color: $cream;
+		text-decoration: underline;
+	}
+}

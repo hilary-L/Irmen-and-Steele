@@ -1,0 +1,67 @@
+<template name="furnitureContent_phone">
+	<div class="contain furniture-mobile">
+		<div class="content-box">
+			<div class="row">
+				<div class="small-12 large-3 md-panel columns end">
+					<div class="ui-front">
+						<select name="furniture-menu" id="furniture-menu">
+							<option value="Living">Dining</option>
+							<option value="Dining">Living</option>
+							<option value="Kitchen">Kitchen</option>
+							<option value="Office">Office</option>
+						</select>
+					</div>
+				<div class="row">
+					<div class="small-12 columns end">
+						<div name="dining" id="dining" class="furniture-cat">
+							{{# each dining}}
+								<div class="item-box">
+									<h1>{{ name }}</h1>
+									<img src="{{ mobile }}">
+									<h5><span>Dimensions:</span> {{ dimensions }}</h5>
+									<h5><span>Stock:</span> {{ stock }}</h5>
+									<p><span>Description:</span> {{ description }}</p>
+								</div>
+							{{/each}}
+						</div>
+						<div name="living" id="living" class="furniture-cat">
+							{{# each living}}
+								<div class="item-box">
+									<h1>{{ name }}</h1>
+									<img src="{{ mobile }}">
+									<h5><span>Dimensions:</span> {{ dimensions }}</h5>
+									<h5><span>Stock:</span> {{ stock }}</h5>
+									<p><span>Description:</span> {{ description }}</p>
+								</div>
+							{{/each}}
+						</div>
+						<div name="kitchen" id="kitchen" class="furniture-cat">
+							{{# each kitchen }}
+								<div class="item-box">
+									<h1>{{ name }}</h1>
+									<img src="{{ mobile }}">
+									<h5><span>Dimensions:</span> {{ dimensions }}</h5>
+									<h5><span>Stock:</span> {{ stock }}</h5>
+									<p><span>Description:</span> {{ description }}</p>
+								</div>
+							{{/each}}
+						</div>
+						<div name="office" id="office" class="furniture-cat">
+							{{# each office }}
+								<div class="item-box">
+									<h1>{{ name }}</h1>
+									<img src="{{ mobile }}">
+									<h5><span>Dimensions:</span> {{ dimensions }}</h5>
+									<h5><span>Stock:</span> {{ stock }}</h5>
+									<p><span>Description:</span> {{ description }}</p>
+								</div>
+							{{/each}}
+						</div>
+					</div>
+				</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+</template>

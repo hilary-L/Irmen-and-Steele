@@ -1,0 +1,31 @@
+<template name="contact">
+	<div class="contain">
+		<div class="content-box contact">
+			<div class="row">
+				<div class="small-12 medium-8 medium-centered md-panel columns">
+					{{#gridForm "contact-form" }}
+						{{#gridSet label="Contact"}}
+							{{#gridRow span="2"}}
+								{{#gridElement span="1" type="text" label="Your Name" required="required" id="Name"}}{{/gridElement}}
+								{{#gridElement span="1" type="email" label="Your Email" required="required" id="Email"}}{{/gridElement}}
+							{{/gridRow}}
+							{{#gridRow span="1"}}
+								{{#gridElement span="1" type="text" label="Subject" required="required" id="Subject"}}{{/gridElement}}
+							{{/gridRow}}
+							{{#gridRow span="1"}}
+								{{#gridElement span="1" type="text" label="Custom Order Type (Optional)" id="Custom"}}{{/gridElement}}
+							{{/gridRow}}
+							{{#gridRow span="1"}}
+								{{#gridElement span="1" type="textarea" rows="4" required="required" label="Message" id="text"}}{{/gridElement}}
+							{{/gridRow}}
+							{{#gridRow span="1"}}
+								{{#gridElement span="1" type="submit" id="contact_submit" value="Send" class="email-btn"}}{{/gridElement}}
+							{{/gridRow}}
+						{{/gridSet}}
+					{{/gridForm}}
+
+				</div>
+			</div>
+		</div>
+	</div>
+</template>

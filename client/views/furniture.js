@@ -1,4 +1,5 @@
 Template.furniture.rendered = function(){
+	$(document).foundation('reflow');
 	$('.overlay').addClass('dim');
 	$('.overlay-color').removeClass('green');
 	$('.overlay-color').addClass('brown');
@@ -8,31 +9,10 @@ Template.furniture.rendered = function(){
 	$('a').removeClass('active-lt');
 	$("a[href='/furniture']").addClass('active-lt');
 
-	var h = ($(window).height() * 0.8);
 	
-	$('.md-panel').css('height', h);
-
-	var w = ($('.center-panel').width());
-	$('.featured').css('width', w);
-
 	$('#accordion').accordion();
 };
 
-Template.furniture.helpers({
-	living: function() {
-		return Pieces.find({category: 'Living'});
-	},
-	kitchen: function() {
-		return Pieces.find({category: 'Kitchen'});
-	},
-	dining: function() {
-		return Pieces.find({category: 'Dining'});
-	},
-	office: function() {
-		return Pieces.find({category: 'Office'});
-	}
-
-});
 
 Template.furniture.events({
 	'click img': function(event) {

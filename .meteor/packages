@@ -5,10 +5,14 @@
 # but you can also edit it by hand.
 
 meteor-platform
-autopublish
 insecure
 matthew:foundation5-sass
 iron:router
 mizzao:jquery-ui
 instagram
 http
+d3js:d3
+herrhelms:meteor-gridforms
+email
+mystor:device-detection
+meteorhacks:sikka

@@ -1,4 +1,5 @@
 Template.about.rendered = function(){
+	$(document).foundation('reflow');
 	$('.overlay').addClass('dim');
 	$('.overlay-color').removeClass('brown');
 	$('.overlay-color').addClass('green');
@@ -8,9 +9,6 @@ Template.about.rendered = function(){
 	$('a').removeClass('active-lt');
 	$("a[href='/about']").addClass('active-lt');
 
-	var h = ($(window).height() * 0.8);
-	
-	$('.md-panel').css('height', h);
 
 	$('#tabs').tabs();
 

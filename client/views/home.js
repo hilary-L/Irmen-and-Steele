@@ -1,4 +1,5 @@
 Template.home.rendered = function() {
+	$(document).foundation('reflow');
 	$('.overlay').removeClass('dim');
 	$('.overlay-color').removeClass('brown');
 	$('.overlay-color').removeClass('green');

@@ -10,7 +10,7 @@ Instagram.getPhotos = function() {
 	var instagramResponse = Meteor.http.get(
 		url,
 		{
-			timeout: 5000,
+			timeout: 10000,
 			params: {
 					access_token: accessToken,
 			}
@@ -18,9 +18,6 @@ Instagram.getPhotos = function() {
 		}
 	);
 
-	console.log('about to return');
-	console.log(instagramResponse);
-	console.log('logged response.');
 	return instagramResponse;
 	
 

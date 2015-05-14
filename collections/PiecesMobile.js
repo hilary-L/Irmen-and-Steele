@@ -1,0 +1,1 @@
+PiecesMobile = new Meteor.Collection('piecesmobile');
