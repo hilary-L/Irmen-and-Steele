@@ -916,11 +916,11 @@ h1.site-title {
 		padding-left: 0.5rem;
 	}
 
-	@media(max-width: 640px) {
+	@media (max-width: 640px) {
 		font-size: 4.5rem;
 	}
 
-	@media(min-height: 500px) and (max-width: 640px) {
+	@media (min-height: 500px) and (max-width: 640px) {
 		margin-top: 30%;
 	}
 }
@@ -932,13 +932,17 @@ h2.site-title {
 	font-size: 1.62rem;
 	color: $lt-brown-2;
 	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
-
-	@media(max-width: 640px) {
-		font-size: 1.05rem;
-	}
 }
 
+@media screen and (max-width: 640px) {
 
+	h2.site-title {
+
+		font-size: 1.05rem;
+
+		
+	}
+	}
 // General Template Containers //
 
 .md-panel {
@@ -1347,7 +1351,7 @@ img.featured {
 		border-radius: 4px;
 		padding: 0.2rem;
 
-		.ui-menu-item {
+		.ui-menu-item, .ui-menu-item:hover, .ui-menu-item:focus {
 			font-family: "Sanchez";
 			color: $cream;
 			padding-top: 1rem;
@@ -1355,15 +1359,8 @@ img.featured {
 			border-bottom: 1px solid $cream;
 			border-top: 1px solid $cream;
 			padding-left: 1rem;
-
-			&:hover, &:focus {
-				border-left: none;
-				border-right: none;
-				border-top: 1px solid $cream;
-				border-bottom: 1px solid $cream;
-
-			}
-
+			border-left: none;
+			border-right: none;
 			
 		}
 
@@ -1600,7 +1597,8 @@ img.featured {
 		color: $cream;
 		padding: 0;
 		font-family: "Proxima Nova";
-		font-size: 1.5rem;
+		font-size: 55px;
+		font-size: 4.5rem;
 
 		span.ui-selectmenu-text {
 			text-align: center;
@@ -1615,7 +1613,8 @@ img.featured {
 			color: $cream;
 			font-family: "Proxima Nova";
 			text-align: center;
-			font-size: 1.3rem;
+			font-size: 55px;
+			font-size: 3.5rem;
 
 			.ui-menu-item.ui-state-focus {
 				background: rgba(35, 27, 17, 0.8);
@@ -1634,7 +1633,8 @@ img.featured {
 		h1 {
 			color: $cream;
 			font-family: "Sanchez";
-			font-size: 1.3rem;
+			font-size: 55px;
+			font-size: 3.5rem;
 			text-align: center;
 		}
 
@@ -1643,12 +1643,14 @@ img.featured {
 			border-radius: 4px;
 			display: block;
 			margin: 0 auto 1rem auto;
+			width: 95%;
 		}
 
 		h5 {
 			color: $cream;
 			font-family: "Sanchez";
-			font-size: 1rem;
+			font-size: 48px;
+			font-size: 3rem;
 			text-align: left;
 			
 
@@ -1659,7 +1661,8 @@ img.featured {
 
 		p {
 			text-align: left;
-			font-size: 1rem;
+			font-size: 48px;
+			font-size: 3rem;
 			line-height: 1.4;
 
 			span {
@@ -1691,6 +1694,7 @@ img.featured {
 		h1 {
 			color: $cream;
 			font-family: "Proxima Nova";
+			font-size: 22px;
 			font-size: 1.3rem;
 			text-align: center;
 		}
@@ -1702,6 +1706,7 @@ img.featured {
 
 		p {
 			text-align: left;
+			font-size: 16px;
 			font-size: 1rem;
 			padding-right: 0.5rem;
 			padding-left: 0.5rem;
@@ -1764,6 +1769,7 @@ img.featured {
 		color: $cream;
 		padding: 0;
 		font-family: "Proxima Nova";
+		font-size: 24px;
 		font-size: 1.5rem;
 
 		span.ui-selectmenu-text {
@@ -1779,7 +1785,9 @@ img.featured {
 			color: $cream;
 			font-family: "Proxima Nova";
 			text-align: center;
+			font-size: 22px;
 			font-size: 1.3rem;
+
 
 			.ui-menu-item.ui-state-focus {
 				background: rgba(14, 30, 22, 0.7);
@@ -1809,6 +1817,7 @@ img.featured {
 		color: $cream;
 		padding: 0;
 		font-family: "Proxima Nova";
+		font-size: 24px;
 		font-size: 1.5rem;
 
 		span.ui-selectmenu-text {
@@ -1824,6 +1833,7 @@ img.featured {
 			color: $cream;
 			font-family: "Proxima Nova";
 			text-align: center;
+			font-size: 22px;
 			font-size: 1.3rem;
 
 			.ui-menu-item.ui-state-focus {
