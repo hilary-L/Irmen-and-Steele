@@ -1,3 +1,7 @@
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link href='http://fonts.googleapis.com/css?family=Sanchez' rel='stylesheet' type='text/css'>
+</head>
 <template name="layout">
 	<div class="overlay">
 	</div>
@@ -5,7 +9,6 @@
 	</div>
 		<div class="container">
 			<header>
-			<link href='http://fonts.googleapis.com/css?family=Sanchez' rel='stylesheet' type='text/css'>
 				<nav class="top-bar" data-topbar role="navigation">
 				  <ul class="title-area">
 				    <li class="name active">
@@ -34,4 +37,6 @@
 				{{>yield}}
 			</div>
 		</div>
+
+		{{initFoundation}}
 </template>

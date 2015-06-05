@@ -24,6 +24,9 @@ Template.designsContent_phone.rendered = function() {
 Template.designsContent_phone.events({
 	'click #ui-id-1': function() {
 
+		var text = $('#ui-id-1').text();
+		$('.ui-selectmenu-text').text(text);
+
 		$('svg').remove();
 		
 		var container = document.getElementById("design-pad");
@@ -45,6 +48,9 @@ Template.designsContent_phone.events({
 	},
 	'click #ui-id-2': function() {
 
+		var text = $('#ui-id-2').text();
+		$('.ui-selectmenu-text').text(text);
+
 		$('svg').remove();
 		
 		var container = document.getElementById("design-pad");
@@ -65,6 +71,9 @@ Template.designsContent_phone.events({
 	},
 	'click #ui-id-3': function() {
 
+		var text = $('#ui-id-3').text();
+		$('.ui-selectmenu-text').text(text);
+
 		$('svg').remove();
 		
 		var container = document.getElementById("design-pad");
@@ -83,6 +92,9 @@ Template.designsContent_phone.events({
 	});
 	},
 	'click #ui-id-4': function() {
+
+		var text = $('#ui-id-4').text();
+		$('.ui-selectmenu-text').text(text);
 
 		$('svg').remove();
 		
@@ -103,6 +115,9 @@ Template.designsContent_phone.events({
 	});
 	},
 	'click #ui-id-5': function() {
+
+		var text = $('#ui-id-5').text();
+		$('.ui-selectmenu-text').text(text);
 
 		$('svg').remove();
 		

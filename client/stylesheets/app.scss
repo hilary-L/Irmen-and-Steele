@@ -713,6 +713,10 @@ g {
 	height: 65px;
 	z-index: 10;
 
+  .title-area {
+    min-width: 135px;
+  }
+
 	.active {
 			border-bottom: 3px double $lt-brown;
 			padding: 0;
@@ -898,51 +902,79 @@ g {
 			
 			}
 	}
+
+  @media(min-width: 641px) and (max-width: 1024px) {
+
+
+      .top-bar-section {
+
+        .right {
+
+          position: static;
+          float: right;
+          width: 75%;
+
+
+
+        }
+      }
+  }
 }
 
 // Home Template //
 
-h1.site-title {
-	font-family: "Proxima Nova";
-	text-align: center;
-	margin-top: 12%;
-	color: $lt-brown-2;
-	font-size: 7rem;
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+.home {
 
-	span {
+    .small-12 {
+      padding: 0;
+    }
 
-		font-family: "Ostrich Sans Inline";
-		padding-left: 0.5rem;
-	}
+    h1.site-title {
+    font-family: "Proxima Nova";
+    text-align: center;
+    margin-top: 12%;
+    color: $lt-brown-2;
+    font-size: 7rem;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
 
-	@media (max-width: 640px) {
-		font-size: 4.5rem;
-	}
+    span {
 
-	@media (min-height: 500px) and (max-width: 640px) {
-		margin-top: 30%;
-	}
+      font-family: "Ostrich Sans Inline";
+      padding-left: 0.5rem;
+    }
+
+    @media (max-width: 640px) {
+      font-size: 4.5rem;
+    }
+
+    @media (min-height: 500px) and (max-width: 640px) {
+      margin-top: 30%;
+    }
+  }
+
+  h2.site-title {
+    text-align: center;
+    margin-top: -7%;
+    font-family: 'Sanchez', serif;
+    font-size: 1.62rem;
+    color: $lt-brown-2;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+  }
+
+  @media screen and (max-width: 640px) {
+
+    h2.site-title {
+
+      font-size: 1.05rem;
+
+      
+    }
+  }
+
+
 }
 
-h2.site-title {
-	text-align: center;
-	margin-top: -7%;
-	font-family: 'Sanchez', serif;
-	font-size: 1.62rem;
-	color: $lt-brown-2;
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
-}
 
-@media screen and (max-width: 640px) {
-
-	h2.site-title {
-
-		font-size: 1.05rem;
-
-		
-	}
-	}
 // General Template Containers //
 
 .md-panel {
@@ -1047,7 +1079,7 @@ img.featured {
 .furniture-mobile {
 	
 	.small-12 {
-		margin: 0;
+		margin: 0 auto;
 	}
 }
 
@@ -1131,7 +1163,7 @@ img.featured {
 		display: none;
 	}
 
-	@media(max-width: 640px) {
+	@media(max-width: 1024px) {
 
 		.large-3 {
 			display: none;
@@ -1597,8 +1629,8 @@ img.featured {
 		color: $cream;
 		padding: 0;
 		font-family: "Proxima Nova";
-		font-size: 55px;
-		font-size: 4.5rem;
+    font-size: 1.5rem;
+
 
 		span.ui-selectmenu-text {
 			text-align: center;
@@ -1613,12 +1645,12 @@ img.featured {
 			color: $cream;
 			font-family: "Proxima Nova";
 			text-align: center;
-			font-size: 55px;
-			font-size: 3.5rem;
+
 
 			.ui-menu-item.ui-state-focus {
 				background: rgba(35, 27, 17, 0.8);
 				color: $cream;
+        border: none;
 			}
 		}
 	}
@@ -1633,9 +1665,9 @@ img.featured {
 		h1 {
 			color: $cream;
 			font-family: "Sanchez";
-			font-size: 55px;
-			font-size: 3.5rem;
-			text-align: center;
+      font-size: 1.5rem;
+      text-align: center;
+		
 		}
 
 		img {
@@ -1649,8 +1681,6 @@ img.featured {
 		h5 {
 			color: $cream;
 			font-family: "Sanchez";
-			font-size: 48px;
-			font-size: 3rem;
 			text-align: left;
 			
 
@@ -1661,8 +1691,6 @@ img.featured {
 
 		p {
 			text-align: left;
-			font-size: 48px;
-			font-size: 3rem;
 			line-height: 1.4;
 
 			span {
@@ -1701,7 +1729,7 @@ img.featured {
 
 		img {
 			max-height: 200px;
-			max-width: 175px;
+			max-width: 150px;
 		}
 
 		p {
@@ -1792,6 +1820,7 @@ img.featured {
 			.ui-menu-item.ui-state-focus {
 				background: rgba(14, 30, 22, 0.7);
 				color: $cream;
+        border: none;
 			}
 		}
 	}
@@ -1839,6 +1868,7 @@ img.featured {
 			.ui-menu-item.ui-state-focus {
 				background: rgba(35, 27, 17, 0.8);
 				color: $cream;
+        border: none;
 			}
 		}
 	}
